@@ -1,8 +1,3 @@
-Here's a comprehensive README.md for your project:
-
-​
-
-text
 # 🍩 Treato - Sweet Inventory Management System
 
 A full-stack web application for managing sweet inventory with an elegant candy-themed UI. Built with Django REST Framework backend and React frontend, featuring JWT authentication, admin dashboard, and real-time inventory management.
@@ -59,30 +54,30 @@ A full-stack web application for managing sweet inventory with an elegant candy-
 ## 📸 Screenshots
 
 ### Authentication Pages
-![Login Page](./screenshots/login.png)
+![Login Page](./Screenshots/login.png)
 *Beautiful glassmorphic login interface with candy-themed background*
 
-![Register Page](./screenshots/register.png)
+![Register Page](./Screenshots/register.png)
 *User registration with animated floating candies*
 
 ### User View
-![Sweet Catalog](./screenshots/catalog.png)
+![Sweet Catalog](./Screenshots/catalog.png)
 *Main catalog with advanced filters and search*
 
-![Sweet Cards](./screenshots/cards.png)
+![Sweet Cards](./Screenshots/cards.png)
 *Product cards with hover effects and stock indicators*
 
-![Pagination](./screenshots/pagination.png)
+![Pagination](./Screenshots/pagination.png)
 *Smooth pagination with page numbers*
 
 ### Admin Dashboard
-![Admin Dashboard](./screenshots/admin-dashboard.png)
+![Admin Dashboard](./Screenshots/admin-dashboard.png)
 *Complete admin panel with statistics and inventory table*
 
-![Add Sweet Form](./screenshots/add-sweet.png)
+![Add Sweet Form](./Screenshots/add-sweet.png)
 *Intuitive form for adding new sweets with image upload*
 
-![Edit Sweet](./screenshots/edit-sweet.png)
+![Edit Sweet](./Screenshots/edit-sweet.png)
 *Inline editing interface for updating sweets*
 
 ## 🚀 Installation & Setup
@@ -368,16 +363,7 @@ treato/
 └── LICENSE                          # MIT License
 ```
 ```
-text
 
-## 🧪 Testing
-
-### Backend Tests
-
-Run Django tests:
-
-cd backend
-python manage.py test
 
 text
 
@@ -409,16 +395,6 @@ text
 - [x] Image upload works
 - [x] Regular users cannot access admin
 
-### Test Results Summary
-
-✅ Authentication Tests: 8/8 passed
-✅ Sweet CRUD Tests: 12/12 passed
-✅ Filter & Search Tests: 10/10 passed
-✅ Pagination Tests: 4/4 passed
-✅ Purchase Tests: 6/6 passed
-✅ Admin Authorization Tests: 8/8 passed
-
-Total: 48/48 tests passed (100%)
 
 text
 
@@ -534,14 +510,12 @@ This project was developed with assistance from Perplexity AI for specific front
 I acknowledge that AI assistance was used for frontend UI design and styling as documented above. All business logic, backend implementation, API design, and core functionality were developed independently. The AI served as a design consultant and CSS reference, while I maintained full control over the application architecture and implementation.
 
 **Time Breakdown:**
-- Backend Development: 100% independent (12 hours)
+- Backend Development: 80% independent (12 hours)
 - Frontend Logic: 100% independent (8 hours)
-- Frontend UI/Styling: 60% independent, 40% AI-assisted (10 hours)
-- Testing & Debugging: 100% independent (4 hours)
+- Frontend UI/Styling: 50% independent, 50% AI-assisted (10 hours)
 - Documentation: 80% independent, 20% AI-assisted (2 hours)
 
 **Total Project Time:** 36 hours  
-**AI-Assisted Time:** ~6 hours (17% of total)
 
 ## 📄 License
 
@@ -551,7 +525,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **Monish**
 - Final Year IT Student
-- GitHub: [@monish](https://github.com/monish)
 
 ## 🙏 Acknowledgments
 
