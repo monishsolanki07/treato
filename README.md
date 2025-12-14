@@ -284,52 +284,90 @@ text
 
 ## 📁 Project Structure
 
+```
 treato/
 ├── backend/
-│ ├── accounts/ # Authentication app
-│ │ ├── views.py # Login, register views
-│ │ ├── urls.py # Auth routes
-│ │ └── serializers.py # User serializers
-│ ├── sweets/ # Sweet inventory app
-│ │ ├── models.py # Sweet model
-│ │ ├── views.py # CRUD, filter, purchase views
-│ │ ├── serializers.py # Sweet serializer
-│ │ └── urls.py # Sweet routes
-│ ├── backend/ # Project settings
-│ │ ├── settings.py # Django configuration
-│ │ └── urls.py # Main URL routing
-│ ├── media/ # Uploaded images
-│ ├── manage.py
-│ └── requirements.txt
+│   ├── accounts/                    # Authentication app
+│   │   ├── migrations/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── serializers.py           # User serializers
+│   │   ├── tests.py
+│   │   ├── urls.py                  # Auth routes
+│   │   └── views.py                 # Login, register views
+│   │
+│   ├── sweets/                      # Sweet inventory app
+│   │   ├── migrations/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py                # Sweet model
+│   │   ├── serializers.py           # Sweet serializer
+│   │   ├── tests.py
+│   │   ├── urls.py                  # Sweet routes
+│   │   └── views.py                 # CRUD, filter, purchase views
+│   │
+│   ├── backend/                     # Project settings
+│   │   ├── __init__.py
+│   │   ├── asgi.py
+│   │   ├── settings.py              # Django configuration
+│   │   ├── urls.py                  # Main URL routing
+│   │   └── wsgi.py
+│   │
+│   ├── media/                       # Uploaded images
+│   │   └── sweets/
+│   │
+│   ├── db.sqlite3                   # SQLite database
+│   ├── manage.py                    # Django management script
+│   └── requirements.txt             # Python dependencies
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── api/
-│ │ │ └── axios.js # Axios configuration
-│ │ ├── auth/
-│ │ │ ├── AuthContext.jsx # Auth state management
-│ │ │ ├── AuthLayout.jsx # Login/Register layout
-│ │ │ ├── Login.jsx # Login form
-│ │ │ ├── Register.jsx # Register form
-│ │ │ └── ProtectedRoute.jsx # Route protection
-│ │ ├── components/
-│ │ │ ├── AddSweet.jsx # Add sweet form
-│ │ │ └── EditSweet.jsx # Edit sweet form
-│ │ ├── pages/
-│ │ │ ├── Sweets.jsx # User catalog view
-│ │ │ └── AdminDashboard.jsx # Admin panel
-│ │ ├── sweets/
-│ │ │ └── SweetCard.jsx # Product card component
-│ │ ├── App.jsx # Main app component
-│ │ └── main.jsx # Entry point
-│ ├── public/
-│ ├── package.json
-│ └── vite.config.js
+│   ├── src/
+│   │   ├── api/
+│   │   │   └── axios.js             # Axios configuration
+│   │   │
+│   │   ├── auth/
+│   │   │   ├── AuthContext.jsx      # Auth state management
+│   │   │   ├── AuthLayout.jsx       # Login/Register layout
+│   │   │   ├── Login.jsx            # Login form
+│   │   │   ├── Register.jsx         # Register form
+│   │   │   └── ProtectedRoute.jsx   # Route protection
+│   │   │
+│   │   ├── components/
+│   │   │   ├── AddSweet.jsx         # Add sweet form
+│   │   │   └── EditSweet.jsx        # Edit sweet form
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Sweets.jsx           # User catalog view
+│   │   │   └── AdminDashboard.jsx   # Admin panel
+│   │   │
+│   │   ├── sweets/
+│   │   │   └── SweetCard.jsx        # Product card component
+│   │   │
+│   │   ├── App.css                  # Global styles
+│   │   ├── App.jsx                  # Main app component
+│   │   ├── index.css                # Base styles
+│   │   └── main.jsx                 # Entry point
+│   │
+│   ├── public/                      # Static assets
+│   │   └── vite.svg
+│   │
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html                   # HTML template
+│   ├── package.json                 # Node dependencies
+│   ├── package-lock.json
+│   ├── README.md
+│   └── vite.config.js               # Vite configuration
 │
-├── screenshots/ # Application screenshots
-├── README.md
-└── .gitignore
-
+│
+├── .gitignore                       # Git ignore file
+├── README.md                        # Project documentation
+└── LICENSE                          # MIT License
+```
+```
 text
 
 ## 🧪 Testing
