@@ -1,7 +1,15 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import api from "../api/axios";
 
 const AuthContext = createContext();
+
+const isTokenValid = (token) => {
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    return payload.exp * 1000 > Date.now();
+  } catch {
+    return false;
+  }
+};
 
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
@@ -10,19 +18,13 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const stored = localStorage.getItem("accessToken");
 
-    if (!stored) {
-      setLoading(false);
-      return;
+    if (stored && isTokenValid(stored)) {
+      setToken(stored);
+    } else {
+      localStorage.removeItem("accessToken");
     }
 
-    // 🔍 validate token
-    api.get("/")
-      .then(() => setToken(stored))
-      .catch(() => {
-        localStorage.removeItem("accessToken");
-        setToken(null);
-      })
-      .finally(() => setLoading(false));
+    setLoading(false);
   }, []);
 
   const login = (accessToken) => {
