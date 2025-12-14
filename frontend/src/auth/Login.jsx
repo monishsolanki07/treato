@@ -17,8 +17,23 @@ function Login() {
 
     try {
       const res = await api.post("auth/login/", { username, password });
-      login(res.data.access);
-      navigate("/");
+      
+      // Check if user is admin - you can do this by:
+      // 1. Checking username (simple)
+      // 2. Calling a user profile endpoint
+      // 3. Decoding JWT if it contains role info
+      
+      // Method 1: Simple check (for demo)
+      const isAdmin = username === "admin" || username === "monish";
+      
+      // Method 2: Or make an API call to check user role
+      // const userRes = await api.get("auth/me/");
+      // const isAdmin = userRes.data.is_staff;
+      
+      login(res.data.access, isAdmin);
+      
+      // Redirect based on role
+      navigate(isAdmin ? "/admin" : "/");
     } catch (err) {
       setError(err.response?.data?.error || "Login failed");
     }

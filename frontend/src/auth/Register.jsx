@@ -16,15 +16,23 @@ function Register() {
     setError("");
 
     try {
+      // 1️⃣ Register user
       await api.post("auth/register/", { username, password });
+
+      // 2️⃣ Auto-login
       const res = await api.post("auth/login/", { username, password });
-      login(res.data.access);
+
+      // New users are not admin by default
+      const isAdmin = false;
+
+      // 3️⃣ Store token + go home
+      login(res.data.access, isAdmin);
       navigate("/");
     } catch (err) {
       setError(
         err.response?.data?.error ||
-          err.response?.data?.username?.[0] ||
-          "Registration failed"
+        err.response?.data?.username?.[0] ||
+        "Registration failed"
       );
     }
   };
