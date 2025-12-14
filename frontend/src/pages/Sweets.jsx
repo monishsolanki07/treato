@@ -1,39 +1,62 @@
-// src/pages/Sweets.jsx
 import { useEffect, useState } from "react";
 import api from "../api/axios";
+import SweetCard from "../sweets/SweetCard";
 
 function Sweets() {
   const [sweets, setSweets] = useState([]);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    const fetchSweets = async () => {
-      try {
-        const res = await api.get("");
-        setSweets(res.data.results ?? res.data);
-      } catch (err) {
-        setError("Failed to load sweets");
-      }
-    };
+  const fetchSweets = async () => {
+    try {
+      const res = await api.get(""); // baseURL already /api/
+      setSweets(res.data.results || res.data);
+    } catch {
+      setError("Failed to load sweets");
+    }
+  };
 
+  useEffect(() => {
     fetchSweets();
   }, []);
 
   return (
-    <div>
-      <h2>Sweets</h2>
+    <div style={styles.page}>
+      <h1 style={styles.title}>🍬 Treato Sweets</h1>
 
-      {error && <p>{error}</p>}
+      {error && <p style={styles.error}>{error}</p>}
 
-      <ul>
-        {sweets.map((s) => (
-          <li key={s.id}>
-            {s.name} — ₹{s.price} (Qty: {s.quantity})
-          </li>
+      <div style={styles.grid}>
+        {sweets.map((sweet) => (
+          <SweetCard
+            key={sweet.id}
+            sweet={sweet}
+            onUpdate={fetchSweets}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
 
 export default Sweets;
+
+const styles = {
+  page: {
+    padding: "2rem",
+    background: "#fafafa",
+    minHeight: "100vh",
+  },
+  title: {
+    textAlign: "center",
+    marginBottom: "2rem",
+  },
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+    gap: "1.5rem",
+  },
+  error: {
+    color: "red",
+    textAlign: "center",
+  },
+};

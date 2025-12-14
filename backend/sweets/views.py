@@ -92,7 +92,7 @@ def sweets_list_create(request):
 
         # ---- Pagination ----
         paginator = PageNumberPagination()
-        paginator.page_size = 2  # small for demo
+        paginator.page_size = 4  # small for demo
         result_page = paginator.paginate_queryset(sweets, request)
 
         serializer = SweetSerializer(result_page, many=True)
